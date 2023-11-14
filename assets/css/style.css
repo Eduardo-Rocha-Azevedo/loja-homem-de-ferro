@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@200;300;400;500&family=Raleway&family=Roboto&family=Rock+Salt&display=swap');
+:root{
+    --white: #fff;
+    --red: #aa0505;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -6,14 +11,18 @@
   
 }
 
-body, button, input{
+body, button, input, textarea{
     font: 400 16px 'Roboto', sans-serif;
       
 }
 li{
-    text-decoration: none;
     list-style-type: none;
 }
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+/*Sobre.html*/
 /*HEADER*/
 .main-header{
     background-image: url('../img/background-image.png');
@@ -37,12 +46,6 @@ li{
     text-transform: uppercase;
 }
 
-.nav-item a{
-    color: #fff;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
 .nav-item a:hover{
     color: #8a8787;
 }
@@ -59,12 +62,13 @@ hr{
 /*MAIN*/
 .main-section{
     padding: 40px 0 64px;
+    
 }
 
 .conteiner{
     max-width: 600px;
     padding: 0 16px; 
-    margin:  0;
+    margin:  0 auto;
 }
 
 .section-title{
@@ -90,7 +94,7 @@ hr{
 /*FOOTER*/
 
 .main-footer{
-    background-color: #aa0505;
+    background-color: var(--red);
     padding: 16px 0;
 }
 .main-footer-conteiner{
@@ -105,7 +109,7 @@ hr{
 
 .movie-title{
     font-family: "Rock Salt", cursive;
-    color: #fff;
+    color: var(--white);
 }
 
 .list-conteiner{
@@ -113,4 +117,91 @@ hr{
     justify-content: space-between;
     align-items: center;
 }
+.footer-item +.footer-item{
+    margin-left: 16px;
+}
+.footer-item img{
+    width: 32px;
+    height: 32px;
+}
 
+/*index.html*/
+.whatch-trailer-button{
+    color: var(--white);
+    font-size: bold;
+    border: 2px solid var(--red);
+    border-radius: 8px;
+    padding: 8px 24px;
+    background-color: rgba(0,0,0,0.4);
+    transition: 0.2s;
+}
+
+.whatch-trailer-button:hover{
+    background-color: var(--red);
+}
+
+.whatch-trailer-button-player{
+    color: var(--red);
+    margin: 24px 0;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.4);
+    transition: 0.2s;
+}
+.whatch-trailer-button-player:hover{
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.schedule-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.schedule-item + .schedule-item{
+    border-top: 1px solid #333;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.show-date{width: 13%;}
+.show-city{width: 28%;}
+.show-place{width: 35%;}
+
+.buy-ticket-button{
+    width: 20%;
+    background-color: var(--red);
+    color: var(--white);
+    border: 2px solid var(--red);
+    border-radius: 6px;
+    padding: 4px 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.buy-ticket-button:hover{
+    background-color: transparent;
+    color: var(--red);
+}
+
+
+
+/*Responsividade*/
+@media (max-width: 584px){
+    .movie-title-large{
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 470px){
+    .about-movie-image{
+        width: 160px;
+    }
+    .main-footer-conteiner{
+        flex-direction: column;
+    }
+    .movie-title-medium{
+        font-size: 16px;
+    }
+}
